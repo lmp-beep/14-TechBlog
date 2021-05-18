@@ -1,0 +1,8 @@
+
+// hasOne
+
+// belongsTo
+
+// hasMany
+
+// BelongsToMay
