@@ -11,11 +11,11 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    content: {
       type: DataTypes.STRING,
     },
     date_created: {
@@ -23,10 +23,10 @@ Post.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    needed_funding: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-    },
+    // needed_funding: {
+    //   type: DataTypes.FLOAT,
+    //   allowNull: true,
+    // },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -45,3 +45,20 @@ Post.init(
 );
 
 module.exports = Post;
+
+// const { Sequelize, Model, DataTypes } = require('sequelize');
+// const sequelize = require('../config/connection');
+
+// class Post extends Model {}
+
+// Post.init(
+//   {
+//     title: DataTypes.STRING,
+//     body: DataTypes.STRING
+//   },
+//   {
+//     sequelize
+//   }
+// );
+
+// module.exports = Post;

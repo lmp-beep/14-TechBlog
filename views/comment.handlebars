@@ -1,0 +1,40 @@
+{{!-- <div class="text-center">
+  <h2>{{name}}</h2>
+  {{!-- <p>{{{get_emoji}}}</p> --}}
+  <p>{{description}}</p>
+  <p class="created-by">Created by {{user.name}} on {{format_date date_created}}</p>
+  <p>
+    {{!-- <span for="img" aria-label="money">💲</span>
+    <span class="dollar-amount">{{format_amount needed_funding}}</span>
+    needed --}}
+  </p>
+  <p>
+    <button class="btn btn-primary" type="submit">Comment</button>
+  </p>
+</div>
+
+{{#if true}}
+    {{#each comments as |comment|}}
+  <p class="card-text">{{comment.body}}</p>
+    <p class="card-text">BY: {{comment.user.username}}</p>
+    <p class="card-text">CREATED AT {{comment.createdAt}}</p>
+     {{/each}}
+{{/if}}
+
+    <div class="card border-success mb-3 " style="max-width: 100rem;">
+      <div class="card-body text-success">
+        <form class="mb-4" id="comment-form">
+        <div class="form-group mb-4">
+             <input type="hidden" id="post-id" value="{{id}}">
+          <label for="comment" class="h5">Comment</label>
+          <input type="text" class="form-control" placeholder=""
+           id="comment-input-post" />
+        </div>
+
+        <input type="submit" value="Submit" class="btn btn-success w-100 mb-1" />
+      </form>
+  
+    </div>
+</div>
+   
+<script src="/js/comment.js"></script> --}}

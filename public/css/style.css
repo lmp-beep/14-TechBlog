@@ -2,6 +2,23 @@ header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
+/* main {
+  border-bottom: 1px solid #ccc;
+} */
+
+.col-md-12 {
+  border-bottom: 1px solid #ccc;
+}
+
+p {
+  word-wrap: break-word;
+}
+
+.created-by {
+  color: rgb(163, 161, 161);
+  font-size: .875rem;
+}
+
 .no-button {
   background: none;
   border: none;
@@ -16,9 +33,9 @@ header, .project:not(:last-child) {
   color: #065b83;
   text-decoration: underline;
 }
-
+/* 
 .dollar-amount {
   color: #056605;
   font-weight: bold;
   margin-left: -5px;
-}
+} */
