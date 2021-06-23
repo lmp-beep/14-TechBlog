@@ -1,34 +1,26 @@
-// const getComments = async () => {
-//   const allComments = await fetch("/api/comments/", {
-//     method: "GET",
-//     headers: { "Content-Type": "application/json" },
-//   });
-//   return allComments.json();
-// };
+const newCommentHandler = async (event) => {
+    event.preventDefault();
+  
+    const content = document.querySelector('#comment-content').value.trim();
+  
+    if (content) {
+      console.log(content);
+      const response = await fetch(`/api/comments`, {
+        method: 'POST',
+        body: JSON.stringify({ content }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      if (response.ok) {
+        document.location.replace('/post');
+      } else {
+        alert('Failed to create comment');
+      }
+    }
+  };
 
-// const commentFormHandler = async (event) => {
-//   event.preventDefault();
-
-//   const postId = document.querySelector("#post-id").value;
-//   const body = document.querySelector("#comment-input-post").value;
-
-//   try {
-//     const allComments = await getComments();
-//     console.log(allComments);
-//     if (body) {
-//       await fetch("/api/comments/", {
-//         method: "POST",
-//         body: JSON.stringify({ postId, body }),
-//         headers: { "Content-Type": "application/json" },
-//       });
-
-//       // document.location.reload();
-//     }
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-// document
-//   .querySelector("#comment-form")
-//   .addEventListener("submit", commentFormHandler);
+document
+.querySelector('.new-comment-form')
+.addEventListener('submit', newCommentHandler);
