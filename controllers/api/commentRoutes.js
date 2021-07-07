@@ -32,13 +32,16 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
-router.get("/", withAuth, async (req, res) => {
-  try {
-    const allComments = await Comment.findAll({});
-    res.json(allComments);
-  } catch (err) {}
-});
+// router.get("/", withAuth, async (req, res) => {
+//   try {
+//     const allComments = await Comment.findAll({});
+//     res.json(allComments);
+//   } catch (err) {}
+// });
 
+// router.get("/post", withAuth, async (req,res) => {
+//   res.send("post comments");
+// })
 
 
 // router.post("/", async (req, res) => {

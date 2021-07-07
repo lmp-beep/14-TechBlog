@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -68,6 +68,25 @@ router.get('/dashboard', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get("/post", withAuth, async (req,res) => {
+  try {
+    const commentData = await Comment.findAll({
+      include: [{ model: Comment }],
+    });
+
+    const comments = commentData.map((comment) => comment.get({ plain: true }));
+
+    res.render('post', { 
+      comments, 
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
