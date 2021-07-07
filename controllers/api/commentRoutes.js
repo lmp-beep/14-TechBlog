@@ -18,11 +18,7 @@ const withAuth = require('../../utils/auth');
 //     res.render('post');
 //   });
 
-
-
-
-
-  
+ 
 
 
 router.post("/", withAuth, async (req, res) => {
@@ -42,10 +38,6 @@ router.get("/", withAuth, async (req, res) => {
     res.json(allComments);
   } catch (err) {}
 });
-
-
-
-
 
 
 
